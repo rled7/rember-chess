@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Rember Chess</title>
+  <meta name="description" content="A refined browser chess game — play the engine, solve the daily puzzle, get coached on your moves." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%99%9E%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="walnut">
+  <div class="wrap">
+    <header class="masthead">
+      <h1>Rember <em>Chess</em></h1>
+      <p>Play the engine · solve the daily puzzle · get coached on every move</p>
+    </header>
+
+    <div class="layout">
+      <div class="board-area">
+        <div class="eval-bar" title="Engine evaluation (White advantage)">
+          <div class="eval-fill" id="eval-fill"></div>
+          <span class="eval-score" id="eval-score">0.0</span>
+        </div>
+        <div id="board"></div>
+      </div>
+
+      <aside class="panel">
+        <div class="status" id="status">Loading…</div>
+
+        <div class="puzzle-banner hidden" id="puzzle-banner">
+          <strong>Puzzle of the day</strong> — <span id="puzzle-theme"></span>.
+          <button class="btn" id="show-solution" style="margin-top:8px;">Show solution</button>
+        </div>
+
+        <div class="controls">
+          <button class="btn primary" id="new-game">New game</button>
+          <button class="btn" id="mode-play">Play engine</button>
+          <button class="btn" id="mode-puzzle">Daily puzzle</button>
+          <button class="btn" id="flip">Flip board</button>
+        </div>
+
+        <div class="field">
+          <label for="difficulty">Engine strength</label>
+          <select id="difficulty">
+            <option value="2">Beginner</option>
+            <option value="5">Casual</option>
+            <option value="10" selected>Club</option>
+            <option value="16">Strong</option>
+            <option value="20">Max</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="theme-select">Board theme</label>
+          <select id="theme-select">
+            <option value="walnut" selected>Walnut</option>
+            <option value="ivory">Ivory</option>
+            <option value="slate">Slate</option>
+            <option value="forest">Forest</option>
+          </select>
+        </div>
+
+        <label class="check-row"><input type="checkbox" id="play-black" /> Play as Black</label>
+        <label class="check-row"><input type="checkbox" id="coach-toggle" checked /> Coach mode</label>
+
+        <div class="divider"></div>
+
+        <div class="coach" id="coach-panel">
+          <h3>Coach</h3>
+          <div class="verdict" id="verdict"></div>
+          <button class="btn" id="explain-btn" disabled>Explain this move</button>
+          <div class="explain-out" id="explain-out"></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      Built by Rember · engine: <a href="https://github.com/nmrugg/stockfish.js">Stockfish.js</a> (GPL) ·
+      rules: <a href="https://github.com/jhlywa/chess.js">chess.js</a>
+    </footer>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

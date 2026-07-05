@@ -1,0 +1,14 @@
+{
+  "name": "rember-chess",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A refined browser chess game: play the engine, solve the daily puzzle, and get coached on your moves.",
+  "scripts": {
+    "dev": "npx serve .",
+    "validate:puzzles": "node scripts/validate-puzzles.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0"
+  }
+}
